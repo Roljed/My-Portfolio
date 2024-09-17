@@ -17,11 +17,7 @@ export const links = [
     },
     {
         name: "Experience",
-        hash: "#Experience"
-    },
-    {
-        name: "Projects",
-        hash: "#projects"
+        hash: "#experience"
     },
     {
         name: "Skills",
@@ -30,6 +26,10 @@ export const links = [
     {
         name: "Certifications",
         hash: "#certifications"
+    },
+    {
+        name: "Projects",
+        hash: "#projects"
     },
     {
         name: "Contact",
