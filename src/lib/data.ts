@@ -2,9 +2,10 @@ import React from "react"
 import { CgWorkAlt } from "react-icons/cg";
 import {FaReact} from "react-icons/fa";
 import {LuGraduationCap} from "react-icons/lu";
+import projectRedisImg from "@/static/projects/project-redis-in-python.png"
 import projectAnalysisImg from "@/static/projects/project-cyclistic-study.png"
-import projectLLVMImg from "@/static/projects/project-llvm.png"
-import projectLittleLemonImg from "@/static/projects/project-little-lemon.png"
+import projectERDiagram from "@/static/projects/project-ER-Diagram.png"
+import projectLittleLemonRestaurantImg from "@/static/projects/project-little-lemon-restaurant.png"
 
 export const links = [
     {
@@ -49,12 +50,31 @@ export const experienceData = [
 
 export const projectsData = [
     {
+        title: "Redis",
+        tags: ["Python", "Threading", "Network"],
+        description: "My implementation of Redis DB in Python.",
+        imageUrl: projectRedisImg,
+    },
+    {
         title: "Little Lemon Database",
         tags: ["SQL", "MySQL"],
-        // imageUrl: someImg,
         description: "Little Lemon Database",
+        imageUrl: projectERDiagram,
+
+    },
+    {
+        title: "Little Lemon Restaurant",
+        tags: ["React", "Python", "Django"],
+        description: "Little Lemon Restaurant",
+        imageUrl: projectLittleLemonRestaurantImg,
+    },
+    {
+        title: "Cyclist Study",
+        tags: ["Python", "R", "Data analysis"],
+        description: "Google cyclist bike-share analysis case study using R and Python",
+        imageUrl: projectAnalysisImg,
     }
-]
+] as const;
 
 export const skillsData = [
     "HTML",
