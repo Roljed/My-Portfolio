@@ -11,12 +11,12 @@ import { experiencesData } from '@/lib/data';
 import { useInView } from 'react-intersection-observer';
 
 export default function Experience() {
-    const { ref } = useSectionInView('Experience');
+    const { ref } = useSectionInView('Experience', 0.3);
     return (
         <section
             ref={ref}
             id="experience"
-            className="mb-28 max-w-[50rem] scroll-mt-28 text-center leading-8 sm:mb-40"
+            className="mb-28 max-w-[80rem] text-center z-10 scroll-mt-28 sm:mb-40 mt-28"
         >
             <SectionHeading title={"My Experience"} />
             <VerticalTimeline lineColor="">
@@ -25,7 +25,7 @@ export default function Experience() {
                         triggerOnce: true,
                     });
                     return (
-                        <div key={index} ref={ref} className="vertical-timeline-element">
+                        <div key={index} ref={ref} className="vertical-timeline-element mb-28">
                             <VerticalTimelineElement
                                 contentStyle={{
                                     background: '#f3f4f6',
