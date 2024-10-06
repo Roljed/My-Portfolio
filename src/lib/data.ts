@@ -38,15 +38,58 @@ export const links = [
     },
 ] as const;
 
-export const experienceData = [
+export const experiencesData = [
+    {
+        title: "Lab Operator",
+        location: "Intel",
+        date: "Sep 2016",
+        icon: React.createElement(CgWorkAlt),
+        description: "Operation of mechanized microprocessor- chip test, requiring assessment and troubleshooting." +
+            "Outside of the testing group, participated in software development projects, focusing on optimization, code modernization, and automatic data conversion between databases.",
+    },    {
+        title: "Software Engineer Intern",
+        location: "Intel",
+        date: "Oct 2018",
+        icon: React.createElement(CgWorkAlt),
+        description: "Developed internal tools for analysis of power and thermal simulations." +
+            "Outside of the testing group, participated in software development projects, focusing on optimization, code modernization, and automatic data conversion between databases.",
+    },
+    {
+        title: "Graduated B.Sc. in Computer Science",
+        location: "Haifa University",
+        date: "Sep 2020",
+        icon: React.createElement(LuGraduationCap),
+        description: "Graduated BS in Computer Science",
+    },
+    {
+        title: "Software Engineer",
+        location: "Intel",
+        date: "July 2020",
+        icon: React.createElement(CgWorkAlt),
+        description: "Developed internal tools for analysis of power and thermal simulations." +
+            "Automated ETL for power and thermal studies." +
+            "Supported integration and implementation of new simulation tools." +
+            "CI/CD pipeline integration, pull requests, code reviews, load/stress testing, unit/integration/e2e testing.",
+    },
+    {
+        title: "Software Simulation Engineer",
+        location: "Intel",
+        date: "Jan 2022",
+        icon: React.createElement(CgWorkAlt),
+        description: "Developed simulation infrastructure, simulators, and models to optimize performance, power, quality, and reliability of future Intel chips." +
+            "Implemented automated analysis for required optimization information." +
+            "Supported integration and implementation of new simulation tools." +
+            "CI/CD pipeline integration, pull requests, code reviews, load/stress testing, unit/integration/e2e testing.",
+    },
     {
         title: "Cloud Software Engineer",
-        location: "Haifa, Israel",
-        date: "Sep 2024 - present",
-        // icon: React.createElement(IntelLog),
-        description: "Cloud Software Engineer",
+        location: "Intel",
+        date: "Sep 2024",
+        icon: React.createElement(CgWorkAlt),
+        description: "Since this is a new role, I'll keep it short and simple. I'll be sure to share more updates in the future." +
+            "DevOps, CI/CD pipeline integration, pull requests, code reviews, load/stress testing, unit/integration/e2e testing.",
     }
-]
+] as const;
 
 export const projectsData = [
     {
