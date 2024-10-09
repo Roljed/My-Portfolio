@@ -1,6 +1,7 @@
 import  React from "react"
 import { CgWorkAlt } from "react-icons/cg";
-import {FaReact} from "react-icons/fa";
+import { SiIntel } from "react-icons/si";
+import { PiStudent } from "react-icons/pi";
 import {LuGraduationCap} from "react-icons/lu";
 import projectRedisImg from "@/static/projects/project-redis-in-python.png"
 import projectAnalysisImg from "@/static/projects/project-cyclistic-study.png"
@@ -40,17 +41,25 @@ export const links = [
 
 export const experiencesData = [
     {
-        title: "Lab Operator",
+        title: "Cloud Software Engineer",
         location: "Intel",
-        date: "Sep 2016",
-        icon: React.createElement(CgWorkAlt),
-        description: "Operation of mechanized microprocessor- chip test, requiring assessment and troubleshooting."
-    },    {
-        title: "Software Engineer Intern",
+        date: "Sep 2024",
+        icon: React.createElement(SiIntel),
+        description: "DevOps, CI/CD pipeline integration, pull requests, code reviews, load/stress testing, unit/integration/e2e testing.",
+    },
+    {
+        title: "Software Simulation Engineer",
         location: "Intel",
-        date: "Oct 2018",
-        icon: React.createElement(CgWorkAlt),
-        description: "Developed internal tools for analysis of power and thermal simulations."
+        date: "Jan 2022",
+        icon: React.createElement(SiIntel),
+        description: "Developed simulation infrastructure, simulators, and models to optimize performance, power, quality, and reliability of future Intel chips."
+    },
+    {
+        title: "Software Engineer",
+        location: "Intel",
+        date: "July 2020",
+        icon: React.createElement(SiIntel),
+        description: "Developed internal tools for analysis of power and thermal simulations and studies."
     },
     {
         title: "Graduated B.Sc. in Computer Science",
@@ -60,26 +69,19 @@ export const experiencesData = [
         description: "Graduated BS in Computer Science",
     },
     {
-        title: "Software Engineer",
+        title: "Software Engineer Intern",
         location: "Intel",
-        date: "July 2020",
-        icon: React.createElement(CgWorkAlt),
-        description: "Developed internal tools for analysis of power and thermal simulations and studies."
+        date: "Oct 2018",
+        icon: React.createElement(PiStudent),
+        description: "Developed internal tools for analysis of power and thermal simulations."
     },
     {
-        title: "Software Simulation Engineer",
+        title: "Lab Operator",
         location: "Intel",
-        date: "Jan 2022",
+        date: "Sep 2016",
         icon: React.createElement(CgWorkAlt),
-        description: "Developed simulation infrastructure, simulators, and models to optimize performance, power, quality, and reliability of future Intel chips."
+        description: "Operation of mechanized microprocessor- chip test, requiring assessment and troubleshooting."
     },
-    {
-        title: "Cloud Software Engineer",
-        location: "Intel",
-        date: "Sep 2024",
-        icon: React.createElement(CgWorkAlt),
-        description: "DevOps, CI/CD pipeline integration, pull requests, code reviews, load/stress testing, unit/integration/e2e testing.",
-    }
 ] as const;
 
 export const projectsData = [
