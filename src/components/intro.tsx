@@ -86,23 +86,23 @@ export default function Intro() {
                     delay: 0.1,
                 }}
             >
-                <Link href="/#contact" className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-102 transition">
-                    Contact me here <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition"
-                  onClick={() => {
-                      setActiveSection("Contact")
-                      setTimeOfLastClick(Date.now())
-                  }}
+                <a href="mailto:ydnahshon@gmail.com" className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-102 transition">
+                    Contact me <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition"
+                  // onClick={() => {
+                  //     setActiveSection("Contact")
+                  //     setTimeOfLastClick(Date.now())
+                  // }}
                 />
-                </Link>
+                </a>
 
-                <a className="group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-102 transition cursor-pointer border border-black/10"
+                <a className="group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-102 transition cursor-pointer borderBlack"
                     href="/CV-DUMMY.pdf"
                    download
                 >
                     Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
                 </a>
 
-                <a className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10"
+                <a className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer borderBlack"
                     href="https://www.linkedin.com/in/yaad-nahshon/"
                    target="_blank"
                 >
