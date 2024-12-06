@@ -7,6 +7,11 @@ import projectRedisImg from "@/static/projects/project-redis-in-python.png"
 import projectAnalysisImg from "@/static/projects/project-cyclistic-study.png"
 import projectERDiagram from "@/static/projects/project-ER-Diagram.png"
 import projectLittleLemonRestaurantImg from "@/static/projects/project-little-lemon-restaurant.png"
+import certificationAWSCloudPractitioner from "@/static/certs/aws-certified-cloud-practitioner.png"
+import certificationGoogleDataAnalytics from "@/static/certs/google-data-analytics-professional-certificate.png"
+import certificationGoogleProjectManagement from "@/static/certs/google-project-management-certificate.png"
+import certificationMetaFullStackEngineer from "@/static/certs/meta-full-stack-engineer-certificate.png"
+import certificationMetaDatabaseEngineer from "@/static/certs/meta-database-engineer-certificate.png"
 
 export const links = [
     {
@@ -140,4 +145,32 @@ export const skillsData = [
     "Terraform",
     "Ansible",
     "AWS",
+] as const;
+
+export const certificationsData = [
+    {
+        title: "Google Data Analytics Professional",
+        url: "https://www.credly.com/badges/988b67fd-c859-4ae6-b59a-93f875056982/public_url",
+        imageUrl: certificationGoogleDataAnalytics,
+    },
+    {
+        title: "Meta Full-Stack Software Engineer",
+        url: "https://www.credly.com/badges/bb4bbc25-b673-4949-be55-c3945638be44/public_url",
+        imageUrl: certificationMetaFullStackEngineer,
+    },
+    {
+        title: "Google Project Management",
+        url: "https://www.credly.com/badges/c3ab0266-384c-44bf-969d-7eaadd1827b7/public_url",
+        imageUrl: certificationGoogleProjectManagement,
+    },
+    {
+        title: "AWS Cloud Practitioner",
+        url: "https://www.credly.com/badges/8817feb2-37b8-4b9f-b217-92dc21c636b9/public_url",
+        imageUrl: certificationAWSCloudPractitioner,
+    },
+    {
+        title: "Meta Database Engineer",
+        url: "https://www.credly.com/badges/468973e9-9697-40c8-b030-69c7762641f6/public_url",
+        imageUrl: certificationMetaDatabaseEngineer,
+    }
 ] as const;
