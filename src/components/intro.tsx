@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import portrait from "@/static/portrait.jpeg"
+import portrait from "../../public/portrait.jpeg"
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {BsArrowRight, BsLinkedin} from "react-icons/bs";
@@ -96,8 +96,8 @@ export default function Intro() {
                 </a>
 
                 <a className="group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-102 transition cursor-pointer borderBlack"
-                    href="/CV-DUMMY.pdf"
-                   download
+                   href="/cv_yaad_nahshon.pdf"
+                   download="cv_yaad_nahshon.pdf"
                 >
                     Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
                 </a>
