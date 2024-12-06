@@ -23,12 +23,7 @@ export default function Contact() {
             <p  className="text-gray-700 -mt-6">Please contact me directly at <a className="underline" href="mailto:ydnahshon@gmail.com">ydnahshon@gmail.com</a>, or trough this email form.</p>
             <form
                 className="mt-10 flex flex-col"
-                action={ async (formData) => {
-                    console.log("Running on client");
-                    console.log(formData.get("senderEmail"));
-                    console.log(formData.get("senderMessage"));
-                    await sendEmail(formData);
-                }}
+                action={sendEmail}
             >
                 <input className="h-14 px-4 rounded-lg borderBlack"
                        name="senderEmail"
