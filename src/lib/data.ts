@@ -3,15 +3,15 @@ import { CgWorkAlt } from "react-icons/cg";
 import { SiIntel } from "react-icons/si";
 import { PiStudent } from "react-icons/pi";
 import {LuGraduationCap} from "react-icons/lu";
-import projectRedisImg from "@/static/projects/project-redis-in-python.png"
-import projectAnalysisImg from "@/static/projects/project-cyclistic-study.png"
-import projectERDiagram from "@/static/projects/project-ER-Diagram.png"
-import projectLittleLemonRestaurantImg from "@/static/projects/project-little-lemon-restaurant.png"
-import certificationAWSCloudPractitioner from "@/static/certs/aws-certified-cloud-practitioner.png"
-import certificationGoogleDataAnalytics from "@/static/certs/google-data-analytics-professional-certificate.png"
-import certificationGoogleProjectManagement from "@/static/certs/google-project-management-certificate.png"
-import certificationMetaFullStackEngineer from "@/static/certs/meta-full-stack-engineer-certificate.png"
-import certificationMetaDatabaseEngineer from "@/static/certs/meta-database-engineer-certificate.png"
+import projectRedisImg from "../../public/projects/project-redis-in-python.png"
+import projectAnalysisImg from "../../public/projects/project-cyclistic-study.png"
+import projectERDiagram from "../../public/projects/project-ER-Diagram.png"
+import projectLittleLemonRestaurantImg from "../../public/projects/project-little-lemon-restaurant.png"
+import certificationAWSCloudPractitioner from "../../public/certs/aws-certified-cloud-practitioner.png"
+import certificationGoogleDataAnalytics from "../../public/certs/google-data-analytics-professional-certificate.png"
+import certificationGoogleProjectManagement from "../../public/certs/google-project-management-certificate.png"
+import certificationMetaFullStackEngineer from "../../public/certs/meta-full-stack-engineer-certificate.png"
+import certificationMetaDatabaseEngineer from "../../public/certs/meta-database-engineer-certificate.png"
 
 export const links = [
     {
