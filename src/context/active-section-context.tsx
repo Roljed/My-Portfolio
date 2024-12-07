@@ -1,6 +1,6 @@
 "use client";
 
-import React, {createContext, Dispatch, ReactNode, SetStateAction, useContext, useState} from 'react';
+import React, {createContext, useContext, useState} from 'react';
 import type {ActiveSectionContextProviderProps, ActiveSectionContextType, SectionName} from "@/lib/types";
 
 
