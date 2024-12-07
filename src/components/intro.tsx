@@ -63,7 +63,7 @@ export default function Intro() {
                 </span>
                 with{" "}
                 <span className="font-bold">
-                    8 years of experience.{" "}
+                    6 years of experience.{" "}
                 </span>
                 I enjoy building{" "}
                 <span className="italic">
