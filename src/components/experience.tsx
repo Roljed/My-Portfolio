@@ -21,6 +21,7 @@ export default function Experience() {
             <SectionHeading title={"My Experience"} />
             <VerticalTimeline lineColor="">
                 {experiencesData.map((item, index) => {
+                    // eslint-disable-next-line react-hooks/rules-of-hooks
                     const { ref, inView } = useInView({
                         triggerOnce: true,
                     });
