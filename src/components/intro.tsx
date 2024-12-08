@@ -62,7 +62,7 @@ export default function Intro() {
                     cloud software engineer{" "}
                 </span>
                 with{" "}
-                <span className="font-bold">
+                <span className="font-semibold">
                     6 years of experience.{" "}
                 </span>
                 I enjoy building{" "}
@@ -70,7 +70,7 @@ export default function Intro() {
                     sites & apps.{" "}
                 </span>
                 My focus is{" "}
-                <span className="underline">
+                <span className="font-semibold">
                     Python and cloud technologies
                 </span>
                 .
