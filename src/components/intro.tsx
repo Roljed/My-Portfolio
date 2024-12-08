@@ -98,20 +98,21 @@ export default function Intro() {
                 >
                     Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
                 </a>
+                <div className="flex sm:flex-row items-center justify-center gap-2">
+                    <a className="bg-white text-gray-700 p-4 flex items-center rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer borderBlack"
+                        href="https://www.linkedin.com/in/yaad-nahshon/"
+                       target="_blank"
+                    >
+                        <BsLinkedin />
+                    </a>
 
-                <a className="bg-white text-gray-700 p-4 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer borderBlack"
-                    href="https://www.linkedin.com/in/yaad-nahshon/"
-                   target="_blank"
-                >
-                    <BsLinkedin />
-                </a>
-
-                <a className="bg-white text-gray-700 p-4 flex items-center gap-2 text-[1.33rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10"
-                    href="https://github.com/Roljed"
-                   target="_blank"
-                >
-                    <FaGithubSquare />
-                </a>
+                    <a className="bg-white text-gray-700 p-4 flex items-center text-[1.33rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10"
+                        href="https://github.com/Roljed"
+                       target="_blank"
+                    >
+                        <FaGithubSquare />
+                    </a>
+                </div>
             </motion.div>
         </section>
     )
