@@ -4,7 +4,6 @@ import React from "react";
 import SectionHeading from "@/components/section-heading";
 import {motion} from "framer-motion";
 import {useSectionInView} from "@/lib/hooks";
-import {underline} from "next/dist/lib/picocolors";
 
 export default function About() {
     const {ref} = useSectionInView("About", 0.75)
