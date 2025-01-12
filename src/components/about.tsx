@@ -4,6 +4,7 @@ import React from "react";
 import SectionHeading from "@/components/section-heading";
 import {motion} from "framer-motion";
 import {useSectionInView} from "@/lib/hooks";
+import {underline} from "next/dist/lib/picocolors";
 
 export default function About() {
     const {ref} = useSectionInView("About", 0.75)
@@ -19,10 +20,13 @@ export default function About() {
         >
             <SectionHeading title={"About me"} />
             <p className="mb-3">
-                I’m an <span className="font-medium">enthusiastic software engineer</span>, self-learner, and excellent team player. I am excited to work with a talented team and contribute to the success of Intel’s mission to create world-changing technology that improves every person’s life on the planet. I <span className="underline">love</span> the feeling of finally figuring out a solution to a problem.
+                I am an <span className="font-medium">enthusiastic software engineer</span>, passionate self-learner, and a collaborative team player. I <span className="underline">thrive on solving complex problems</span> and am driven by the thrill of finding elegant solutions. I am excited to work with a talented team and contribute to the success of Intel’s mission to create world-changing technology that improves every person’s life on the planet.
             </p>
             <p>
-                My core stack is <span className="font-medium">Python, Typescript, Jenkins, and Docker</span>. I`m also familiar with web development with React, Next.js and Node.js, and other DevOps tools.
+                My core technical expertise lies in <span className="font-medium">Python, Typescript, Jenkins, and Docker</span>. I am also proficient in web development with React, Next.js, and Node.js, alongside experience with various DevOps tools.
+            </p>
+            <p>
+                My diverse skill set enables me to tackle challenges across the software development lifecycle with creativity and precision.
             </p>
         </motion.section>
     )
