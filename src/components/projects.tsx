@@ -2,26 +2,27 @@
 
 import React from "react";
 import SectionHeading from "@/components/section-heading";
-import {projectsData} from "@/lib/data";
+import { projectsData } from "@/lib/data";
 import Project from "@/components/project";
-import {useSectionInView} from "@/lib/hooks";
-
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Projects() {
-    const {ref} = useSectionInView("Projects");
+    const { ref } = useSectionInView("Projects");
 
     return (
-        <section id="projects" className="scroll-mt-28 mb-28 w-full px-4" ref={ref}>
+        <section
+            id="projects"
+            className="scroll-mt-28 mb-28 sm:mb-40 w-full max-w-[50rem] px-4 mx-auto overflow-x-clip"
+            ref={ref}
+        >
             <SectionHeading title={"My Projects"} />
-            <div className="w-full max-w-[42rem] mx-auto">
-                {
-                    projectsData.map((project, index) => (
-                        <React.Fragment key={index}>
-                            <Project {...project} />
-                        </React.Fragment>
-                    ))
-                }
+            <div className="w-full">
+                {projectsData.map((project) => (
+                    <React.Fragment key={project.title}>
+                        <Project {...project} />
+                    </React.Fragment>
+                ))}
             </div>
         </section>
-    )
+    );
 }

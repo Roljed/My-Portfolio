@@ -28,15 +28,16 @@ export default function Project({
                 scale: scaleProgress,
                 opacity: opacityProgress,
             }}
-            className="group mb-8 last:mb-0 sm:mb-8"
+            className="group relative mb-8 last:mb-0 sm:mb-8"
         >
             <section
-                className="bg-gray-100 dark:bg-stone-900 w-full max-w-[42rem] mx-auto border border-black/5 dark:border-stone-800 rounded-lg overflow-hidden hover:bg-gray-200 dark:hover:bg-stone-800 transition
+                className="bg-gray-100 dark:bg-stone-900 relative w-full border border-black/5 dark:border-stone-800 rounded-lg overflow-hidden hover:bg-gray-200 dark:hover:bg-stone-800 transition
                     flex flex-col
-                    sm:block sm:relative sm:h-[20rem] sm:pr-8
-                    group-even:sm:pl-8"
+                    sm:block sm:h-[20rem] sm:pr-8
+                    lg:pr-12
+                    group-even:sm:pl-8 group-even:lg:pl-12"
             >
-                <div className="px-5 pt-5 pb-4 sm:py-4 sm:px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] group-even:sm:ml-[18rem] group-odd:sm:mr-[18rem]">
+                <div className="px-5 pt-5 pb-4 sm:py-4 sm:px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] group-even:sm:ml-[14rem] group-even:lg:ml-[18rem] group-odd:sm:mr-[14rem] group-odd:lg:mr-[18rem]">
                     <h3 className="text-xl sm:text-2xl font-semibold">{title}</h3>
                     <p className="mt-2 leading-relaxed text-gray-700 dark:text-stone-300">{description}</p>
                     <ul className="flex flex-wrap mt-4 gap-2">
@@ -65,8 +66,9 @@ export default function Project({
                     src={imageUrl}
                     alt={title}
                     quality={95}
-                    className="hidden sm:block absolute top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-                        group-even:right-[initial] group-even:-left-40
+                    className="hidden sm:block absolute top-8 -right-24 w-[20rem] rounded-t-lg shadow-2xl
+                        lg:-right-32 lg:w-[24rem] xl:-right-40 xl:w-[28.25rem]
+                        group-even:right-[initial] group-even:-left-24 group-even:lg:-left-32 group-even:xl:-left-40
                         group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2
                         group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2
                         group-hover:scale-[1.04] transition"

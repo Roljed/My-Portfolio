@@ -1,25 +1,24 @@
 "use client";
 
-import React, {useRef} from "react";
-import {certificationsData} from "@/lib/data";
+import React, { useRef } from "react";
+import { certificationsData } from "@/lib/data";
 import Image from "next/image";
-import {motion, useScroll, useTransform} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-type certificationProps = (typeof certificationsData)[number];
+type CertificationProps = (typeof certificationsData)[number];
 
 export default function Certification({
-                                    title,
-                                    url,
-                                    imageUrl,
-                                } : certificationProps
-) {
-    const ref = useRef<HTMLDivElement >(null);
-    const {scrollYProgress} = useScroll({
+    title,
+    url,
+    imageUrl,
+}: CertificationProps) {
+    const ref = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
         target: ref,
         offset: ["0 1", "1.33 1"],
     });
-    const scaleProgress =   useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-    const opacityProgress =   useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+    const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+    const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
     return (
         <motion.div
@@ -28,20 +27,27 @@ export default function Certification({
                 scale: scaleProgress,
                 opacity: opacityProgress,
             }}
-            className="group mb-3 sm:mb-8 last:mb-0"
+            className="group relative flex w-full flex-col"
         >
-            <section
-                className="flex flex-col max-w-[13.5rem] overflow-hidden relative sm:w-[14rem] sm:h-[16rem] hover:bg-gray-50 dark:hover:bg-stone-800 transition justify-center items-center rounded-md"
+            <div className="flex min-h-[2.75rem] items-center justify-center">
+                <h3 className="text-sm font-semibold text-center text-gray-800 dark:text-stone-200">
+                    {title}
+                </h3>
+            </div>
+            <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 flex h-32 w-full items-center justify-center rounded-md transition hover:bg-gray-50 dark:hover:bg-stone-800"
             >
-                <div>
-                    <h3 className="text-s font-semibold text-center pb-2">{title}</h3>
-                </div>
-                <a href={url}>
-                    <Image src={imageUrl} alt={title} quality={95}
-                           className="w-[10rem] rounded-t-lg shadow-l group-hover:scale-[1.04] transition"/>
-                </a>
-            </section>
+                <Image
+                    src={imageUrl}
+                    alt={title}
+                    quality={95}
+                    className="max-h-28 w-auto max-w-full object-contain shadow-lg transition group-hover:scale-[1.04]"
+                    sizes="(max-width: 640px) calc(100vw - 4rem), 20rem"
+                />
+            </a>
         </motion.div>
-
-    )
+    );
 }
