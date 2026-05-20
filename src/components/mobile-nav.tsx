@@ -8,15 +8,23 @@ import { HiX } from "react-icons/hi";
 import { links } from "@/lib/data";
 import { useActiveSectionContext } from "@/context/active-section-context";
 
+const MOBILE_NAV_DIALOG_ID = "mobile-nav-dialog";
+
+const FOCUSABLE_SELECTOR =
+    'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
 type MobileNavProps = {
     isOpen: boolean;
     onClose: () => void;
 };
 
+export { MOBILE_NAV_DIALOG_ID };
+
 export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
     const { activeSection, setActiveSection, setTimeOfLastClick } =
         useActiveSectionContext();
     const closeButtonRef = useRef<HTMLButtonElement>(null);
+    const drawerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (!isOpen) return;
@@ -25,7 +33,31 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
         document.body.style.overflow = "hidden";
 
         const handleKeyDown = (event: KeyboardEvent) => {
-            if (event.key === "Escape") onClose();
+            if (event.key === "Escape") {
+                onClose();
+                return;
+            }
+
+            if (event.key !== "Tab" || !drawerRef.current) return;
+
+            const focusable = Array.from(
+                drawerRef.current.querySelectorAll<HTMLElement>(
+                    FOCUSABLE_SELECTOR
+                )
+            ).filter((el) => !el.hasAttribute("disabled"));
+
+            if (focusable.length === 0) return;
+
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
         };
 
         window.addEventListener("keydown", handleKeyDown);
@@ -57,6 +89,8 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                         onClick={onClose}
                     />
                     <motion.div
+                        ref={drawerRef}
+                        id={MOBILE_NAV_DIALOG_ID}
                         role="dialog"
                         aria-modal="true"
                         aria-label="Site navigation"
@@ -64,9 +98,13 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                         initial={{ x: "100%" }}
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
-                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 30,
+                        }}
                     >
-                        <motion.button
+                        <button
                             ref={closeButtonRef}
                             type="button"
                             className="mb-8 flex h-11 w-11 items-center justify-center self-end rounded-full bg-gray-100 text-gray-700 transition hover:bg-gray-200 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
@@ -74,17 +112,20 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                             onClick={onClose}
                         >
                             <HiX className="text-xl" aria-hidden />
-                        </motion.button>
+                        </button>
                         <nav>
                             <ul className="flex flex-col gap-1">
                                 {links.map((link) => {
-                                    const isActive = activeSection === link.name;
+                                    const isActive =
+                                        activeSection === link.name;
                                     return (
                                         <li key={link.hash}>
                                             <Link
                                                 href={link.hash}
                                                 aria-current={
-                                                    isActive ? "page" : undefined
+                                                    isActive
+                                                        ? "page"
+                                                        : undefined
                                                 }
                                                 className={clsx(
                                                     "flex min-h-[2.75rem] items-center rounded-lg px-4 py-3 text-lg font-medium transition",

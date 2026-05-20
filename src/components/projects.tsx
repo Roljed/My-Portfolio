@@ -17,8 +17,8 @@ export default function Projects() {
         >
             <SectionHeading title={"My Projects"} />
             <div className="w-full">
-                {projectsData.map((project, index) => (
-                    <React.Fragment key={index}>
+                {projectsData.map((project) => (
+                    <React.Fragment key={project.title}>
                         <Project {...project} />
                     </React.Fragment>
                 ))}

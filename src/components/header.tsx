@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 import clsx from "clsx";
 import { HiMenu } from "react-icons/hi";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import MobileNav from "@/components/mobile-nav";
+import MobileNav, { MOBILE_NAV_DIALOG_ID } from "@/components/mobile-nav";
 import ThemeSwitch from "@/components/theme-switch";
 
 const barClassName =
@@ -17,11 +17,21 @@ export default function Header() {
     const { activeSection, setActiveSection, setTimeOfLastClick } =
         useActiveSectionContext();
     const [mobileNavOpen, setMobileNavOpen] = useState(false);
+    const menuButtonRef = useRef<HTMLButtonElement>(null);
 
     const handleNavClick = (name: (typeof links)[number]["name"]) => {
         setActiveSection(name);
         setTimeOfLastClick(Date.now());
     };
+
+    const closeMobileNav = useCallback(() => {
+        setMobileNavOpen(false);
+        requestAnimationFrame(() => menuButtonRef.current?.focus());
+    }, []);
+
+    const openMobileNav = useCallback(() => {
+        setMobileNavOpen(true);
+    }, []);
 
     return (
         <header className="z-[999] relative">
@@ -50,21 +60,20 @@ export default function Header() {
                 >
                     <ThemeSwitch variant="header" />
                     <button
+                        ref={menuButtonRef}
                         type="button"
                         className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-gray-700 transition hover:bg-gray-200 dark:bg-stone-800 dark:text-stone-200 dark:hover:bg-stone-700"
                         aria-label="Open navigation menu"
                         aria-expanded={mobileNavOpen}
-                        onClick={() => setMobileNavOpen(true)}
+                        aria-controls={MOBILE_NAV_DIALOG_ID}
+                        onClick={openMobileNav}
                     >
                         <HiMenu className="text-xl" aria-hidden />
                     </button>
                 </motion.div>
             </nav>
 
-            <MobileNav
-                isOpen={mobileNavOpen}
-                onClose={() => setMobileNavOpen(false)}
-            />
+            <MobileNav isOpen={mobileNavOpen} onClose={closeMobileNav} />
 
             {/* Desktop: inline links */}
             <nav

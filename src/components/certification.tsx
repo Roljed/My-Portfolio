@@ -29,11 +29,11 @@ export default function Certification({
             }}
             className="group relative flex w-full flex-col"
         >
-            <motion.div className="flex min-h-[2.75rem] items-center justify-center">
+            <div className="flex min-h-[2.75rem] items-center justify-center">
                 <h3 className="text-sm font-semibold text-center text-gray-800 dark:text-stone-200">
                     {title}
                 </h3>
-            </motion.div>
+            </div>
             <a
                 href={url}
                 target="_blank"
