@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* react-vertical-timeline-component doesn't support Tailwind, use CSS var */
 html {
     --line-color: #e5e7eb;
 }

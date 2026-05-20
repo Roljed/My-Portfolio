@@ -25,10 +25,10 @@ export default function ThemeSwitch() {
     }
 
     useEffect(() => {
-        const localTheme = localStorage.getItem("theme") as Theme | null
+        const stored = localStorage.getItem("theme")
+        const localTheme: Theme | null = stored === "light" || stored === "dark" ? stored : null
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-        const resolvedTheme: Theme =
-            localTheme ?? (prefersDark ? "dark" : "light")
+        const resolvedTheme: Theme = localTheme ?? (prefersDark ? "dark" : "light")
 
         setTheme(resolvedTheme)
         document.documentElement.classList.toggle("dark", resolvedTheme === "dark")
@@ -49,9 +49,9 @@ export default function ThemeSwitch() {
             {!mounted ? (
                 <BsSun className={clsx(iconClass, "opacity-0")} aria-hidden />
             ) : theme === "light" ? (
-                <BsSun className={clsx(iconClass, "text-amber-500")} />
+                <BsSun className={clsx(iconClass, "text-amber-500")} aria-hidden />
             ) : (
-                <BsMoon className={clsx(iconClass, "text-sky-300")} />
+                <BsMoon className={clsx(iconClass, "text-sky-300")} aria-hidden />
             )}
         </button>
     )

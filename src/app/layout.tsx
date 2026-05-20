@@ -22,12 +22,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="!scroll-smooth">
+      {/* Blocking script: runs before paint so stored/system dark preference is applied without flash */}
+      <head>
+        <script dangerouslySetInnerHTML={{__html: `(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})()`}} />
+      </head>
       <body className={`${inter.className} bg-sky-50 text-gray-950 dark:bg-stone-950 dark:text-stone-100 relative pt-28 sm:pt-36 overflow-x-hidden transition-colors`}>
         <div
-            className="bg-lime-50 dark:bg-lime-900/45 absolute blur-[10rem] top-[-6rem] z-60 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full sm:w-[68.75rem]">
+            className="bg-lime-50 dark:bg-lime-900/45 absolute blur-[10rem] top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full sm:w-[68.75rem]">
         </div>
         <div
-            className="bg-amber-50 dark:bg-amber-900/50 absolute blur-[10rem] top-[-1rem] z-60 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]">
+            className="bg-amber-50 dark:bg-amber-900/50 absolute blur-[10rem] top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem]">
         </div>
         <ActiveSectionContextProvider>
           <Header />

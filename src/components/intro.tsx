@@ -83,7 +83,7 @@ export default function Intro() {
                     delay: 0.1,
                 }}
             >
-                <a href="mailto:ydnahshon@gmail.com" className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-102 transition">
+                <a href="mailto:ydnahshon@gmail.com" className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 hover:bg-gray-950 active:scale-[1.02] transition">
                     Contact me <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition"
                   // onClick={() => {
                   //     setActiveSection("Contact")
@@ -92,7 +92,7 @@ export default function Intro() {
                 />
                 </a>
 
-                <a className="group bg-white dark:bg-stone-900 text-gray-900 dark:text-stone-100 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-102 transition cursor-pointer borderBlack"
+                <a className="group bg-white dark:bg-stone-900 text-gray-900 dark:text-stone-100 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-[1.02] transition cursor-pointer borderBlack"
                    href="/cv_yaad_nahshon.pdf"
                    download="cv_yaad_nahshon.pdf"
                 >
@@ -102,6 +102,7 @@ export default function Intro() {
                     <a className="bg-white dark:bg-stone-900 text-gray-700 dark:text-stone-200 p-4 flex items-center rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 dark:hover:text-stone-50 active:scale-105 transition cursor-pointer borderBlack"
                         href="https://www.linkedin.com/in/yaad-nahshon/"
                        target="_blank"
+                       rel="noopener noreferrer"
                     >
                         <BsLinkedin />
                     </a>
@@ -109,6 +110,7 @@ export default function Intro() {
                     <a className="bg-white dark:bg-stone-900 text-gray-700 dark:text-stone-200 p-4 flex items-center text-[1.33rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 dark:hover:text-stone-50 active:scale-105 transition cursor-pointer border border-black/10 dark:border-stone-800"
                         href="https://github.com/Roljed"
                        target="_blank"
+                       rel="noopener noreferrer"
                     >
                         <FaGithubSquare />
                     </a>
