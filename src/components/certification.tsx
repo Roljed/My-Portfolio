@@ -31,7 +31,7 @@ export default function Certification({
             className="group mb-3 sm:mb-8 last:mb-0"
         >
             <section
-                className="flex flex-col max-w-[13.5rem] overflow-hidden relative sm:w-[14rem] sm:h-[16rem] hover:bg-gray-50 transition justify-center items-center rounded-md"
+                className="flex flex-col max-w-[13.5rem] overflow-hidden relative sm:w-[14rem] sm:h-[16rem] hover:bg-gray-50 dark:hover:bg-stone-800 transition justify-center items-center rounded-md"
             >
                 <div>
                     <h3 className="text-s font-semibold text-center pb-2">{title}</h3>

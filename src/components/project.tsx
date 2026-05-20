@@ -31,14 +31,14 @@ export default function Project({
             className="group mb-8 last:mb-0 sm:mb-8"
         >
             <section
-                className="bg-gray-100 w-full max-w-[42rem] mx-auto border border-black/5 rounded-lg overflow-hidden hover:bg-gray-200 transition
+                className="bg-gray-100 dark:bg-stone-900 w-full max-w-[42rem] mx-auto border border-black/5 dark:border-stone-800 rounded-lg overflow-hidden hover:bg-gray-200 dark:hover:bg-stone-800 transition
                     flex flex-col
                     sm:block sm:relative sm:h-[20rem] sm:pr-8
                     group-even:sm:pl-8"
             >
                 <div className="px-5 pt-5 pb-4 sm:py-4 sm:px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] group-even:sm:ml-[18rem] group-odd:sm:mr-[18rem]">
                     <h3 className="text-xl sm:text-2xl font-semibold">{title}</h3>
-                    <p className="mt-2 leading-relaxed text-gray-700">{description}</p>
+                    <p className="mt-2 leading-relaxed text-gray-700 dark:text-stone-300">{description}</p>
                     <ul className="flex flex-wrap mt-4 gap-2">
                         {tags.map((tag, index) => (
                             <li
