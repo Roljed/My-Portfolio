@@ -93,7 +93,7 @@ export default function Intro() {
                 </a>
 
                 <a className="group bg-white dark:bg-stone-900 text-gray-900 dark:text-stone-100 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-[1.02] transition cursor-pointer borderBlack"
-                   href="/cv_yaad_nahshon.pdf"
+                   href="/api/cv"
                    download="cv_yaad_nahshon.pdf"
                 >
                     Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
