@@ -44,7 +44,7 @@ export default function Header() {
             {/* Mobile: hamburger + site label + theme */}
             <nav
                 className="fixed top-0 left-1/2 z-[999] flex h-14 w-full max-w-[calc(100vw-1.5rem)] -translate-x-1/2 items-center justify-between px-4 md:hidden"
-                aria-label="Main navigation"
+                aria-label="Mobile navigation"
             >
                 <Link
                     href="#home"
@@ -78,7 +78,7 @@ export default function Header() {
             {/* Desktop: inline links */}
             <nav
                 className="fixed top-[1.7rem] left-1/2 z-[999] hidden -translate-x-1/2 md:flex"
-                aria-label="Main navigation"
+                aria-label="Desktop navigation"
             >
                 <ul className="flex flex-nowrap items-center gap-5 text-[0.9rem] font-medium text-gray-500 dark:text-stone-400">
                     {links.map((link) => {

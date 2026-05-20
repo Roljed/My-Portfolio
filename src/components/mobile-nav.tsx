@@ -82,7 +82,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                     <motion.button
                         type="button"
                         aria-label="Close navigation menu"
-                        className="fixed inset-0 z-[998] bg-black/40 backdrop-blur-sm md:hidden"
+                        className="fixed inset-0 z-[1000] bg-black/40 backdrop-blur-sm md:hidden"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
@@ -94,7 +94,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
                         role="dialog"
                         aria-modal="true"
                         aria-label="Site navigation"
-                        className="fixed inset-y-0 right-0 z-[999] flex w-[min(100%,20rem)] flex-col border-l border-white/40 bg-white/95 px-6 py-6 shadow-2xl backdrop-blur-md dark:border-stone-800 dark:bg-stone-950/95 md:hidden"
+                        className="fixed inset-y-0 right-0 z-[1001] flex w-[min(100%,20rem)] flex-col border-l border-white/40 bg-white/95 px-6 py-6 shadow-2xl backdrop-blur-md dark:border-stone-800 dark:bg-stone-950/95 md:hidden"
                         initial={{ x: "100%" }}
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}

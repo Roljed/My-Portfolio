@@ -45,7 +45,7 @@ export default function Certification({
                     alt={title}
                     quality={95}
                     className="max-h-28 w-auto max-w-full object-contain shadow-lg transition group-hover:scale-[1.04]"
-                    sizes="(max-width: 640px) 100vw, 20rem"
+                    sizes="(max-width: 640px) calc(100vw - 4rem), 20rem"
                 />
             </a>
         </motion.div>

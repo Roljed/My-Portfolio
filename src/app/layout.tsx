@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en" className="!scroll-smooth">
       {/* Blocking script: runs before paint so stored/system dark preference is applied without flash */}
       <head>
-        <script dangerouslySetInnerHTML={{__html: `(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})()`}} />
+        <script dangerouslySetInnerHTML={{__html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}})()`}} />
       </head>
       <body
         suppressHydrationWarning

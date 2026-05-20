@@ -16,7 +16,7 @@ const fadeInAnimationVariants = {
         opacity: 1,
         y: 0,
         transition: {
-            delay: 0.05 * index,
+            delay: Math.min(0.05 * index, 0.3),
         },
     }),
 };
@@ -36,6 +36,7 @@ export default function Certifications() {
                 {certificationsData.map((certification, index) => (
                     <motion.li
                         className={`bg-white dark:bg-stone-900 border border-black/[0.1] dark:border-stone-800 rounded-xl px-5 py-5 flex flex-col ${
+                            // center last card when total count is odd
                             index === lastIndex
                                 ? "sm:col-span-2 sm:max-w-[20rem] sm:mx-auto sm:w-full"
                                 : ""
