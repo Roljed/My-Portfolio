@@ -142,7 +142,7 @@ function DesktopSingleCard({ item }: { item: ExperienceItem }) {
 
 function MobileExperienceList() {
     return (
-        <ul className="lg:hidden flex flex-col gap-8 max-w-[45rem] mx-auto px-4">
+        <ul className="lg:hidden flex flex-col gap-8 w-full">
             {experiencesData.map((item, index) => (
                 <motion.li
                     key={`${item.title}-${item.date}`}
@@ -163,7 +163,7 @@ function MobileExperienceList() {
 
 function DesktopExperienceList() {
     return (
-        <ul className="hidden lg:flex flex-col gap-8 max-w-[45rem] mx-auto px-4">
+        <ul className="hidden lg:flex flex-col gap-8 w-full">
             {desktopExperienceItems.map((entry, index) => (
                 <motion.li
                     key={
@@ -195,7 +195,7 @@ export default function Experience() {
         <section
             ref={ref}
             id="experience"
-            className="mb-28 z-10 scroll-mt-28 sm:mb-40 mt-28"
+            className="mb-28 z-10 scroll-mt-28 sm:mb-40 mt-28 w-full max-w-[50rem] mx-auto px-4"
         >
             <div className="text-center mb-10">
                 <SectionHeading title="My Experience" />

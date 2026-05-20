@@ -1,44 +1,58 @@
-"use client"
+"use client";
 
 import React from "react";
-import {useSectionInView} from "@/lib/hooks";
+import { useSectionInView } from "@/lib/hooks";
 import SectionHeading from "@/components/section-heading";
-import {certificationsData} from "@/lib/data";
+import { certificationsData } from "@/lib/data";
 import Certification from "@/components/certification";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
+const fadeInAnimationVariants = {
+    initial: {
+        opacity: 0,
+        y: 100,
+    },
+    animate: (index: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: 0.05 * index,
+        },
+    }),
+};
 
 export default function Certifications() {
-    const {ref} = useSectionInView("Certifications");
+    const { ref } = useSectionInView("Certifications");
+    const lastIndex = certificationsData.length - 1;
 
     return (
-        <section id="certifications" className="scroll-mt-28 mb-28 max-w-[50rem] w-full px-4" ref={ref}>
+        <section
+            id="certifications"
+            className="scroll-mt-28 mb-28 sm:mb-40 max-w-[50rem] w-full px-4 mx-auto"
+            ref={ref}
+        >
             <SectionHeading title={"My Certifications"} />
-            <div className="">
-
-                <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800 dark:text-stone-200">
-                    {
-                        certificationsData.map((certification, index) => (
-                            <motion.li
-                                className="bg-white dark:bg-stone-900 border border-black/[0.1] dark:border-stone-800 rounded-xl px-5 py-4 w-full max-w-[16rem] sm:max-w-[20rem] min-h-[18rem] sm:min-h-[18rem]"
-                                key={index}
-                                initial="initial"
-                                whileInView="animate"
-                                viewport={{
-                                    once: true,
-                                }}
-                                custom={index}
-                            >
-                                {
-                                    <React.Fragment key={index}>
-                                        <Certification {...certification} />
-                                    </React.Fragment>
-                                }
-                            </motion.li>
-                        ))
-                    }
-                </ul>
-            </div>
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5">
+                {certificationsData.map((certification, index) => (
+                    <motion.li
+                        className={`bg-white dark:bg-stone-900 border border-black/[0.1] dark:border-stone-800 rounded-xl px-5 py-5 flex flex-col ${
+                            index === lastIndex
+                                ? "sm:col-span-2 sm:max-w-[20rem] sm:mx-auto sm:w-full"
+                                : ""
+                        }`}
+                        key={certification.title}
+                        variants={fadeInAnimationVariants}
+                        initial="initial"
+                        whileInView="animate"
+                        viewport={{
+                            once: true,
+                        }}
+                        custom={index}
+                    >
+                        <Certification {...certification} />
+                    </motion.li>
+                ))}
+            </ul>
         </section>
-    )
+    );
 }
