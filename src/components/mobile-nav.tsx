@@ -26,6 +26,17 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
     const closeButtonRef = useRef<HTMLButtonElement>(null);
     const drawerRef = useRef<HTMLDivElement>(null);
 
+    // Auto-close when viewport expands to desktop width so body scroll
+    // and focus management are restored even without a manual close.
+    useEffect(() => {
+        const mq = window.matchMedia("(min-width: 768px)");
+        const handleResize = (e: MediaQueryListEvent) => {
+            if (e.matches) onClose();
+        };
+        mq.addEventListener("change", handleResize);
+        return () => mq.removeEventListener("change", handleResize);
+    }, [onClose]);
+
     useEffect(() => {
         if (!isOpen) return;
 

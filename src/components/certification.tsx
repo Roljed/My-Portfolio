@@ -5,13 +5,13 @@ import { certificationsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-type certificationProps = (typeof certificationsData)[number];
+type CertificationProps = (typeof certificationsData)[number];
 
 export default function Certification({
     title,
     url,
     imageUrl,
-}: certificationProps) {
+}: CertificationProps) {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,

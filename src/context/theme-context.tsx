@@ -24,7 +24,10 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
-        const stored = localStorage.getItem("theme");
+        let stored: string | null = null;
+        try {
+            stored = localStorage.getItem("theme");
+        } catch (e) { /* storage blocked in privacy mode */ }
         const localTheme: Theme | null =
             stored === "light" || stored === "dark" ? stored : null;
         const prefersDark = window.matchMedia(
@@ -44,7 +47,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const toggleTheme = useCallback(() => {
         setTheme((current) => {
             const next: Theme = current === "light" ? "dark" : "light";
-            window.localStorage.setItem("theme", next);
+            try { window.localStorage.setItem("theme", next); } catch (e) { /* storage blocked */ }
             document.documentElement.classList.toggle("dark", next === "dark");
             return next;
         });

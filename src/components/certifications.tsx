@@ -36,8 +36,8 @@ export default function Certifications() {
                 {certificationsData.map((certification, index) => (
                     <motion.li
                         className={`bg-white dark:bg-stone-900 border border-black/[0.1] dark:border-stone-800 rounded-xl px-5 py-5 flex flex-col ${
-                            // center last card when total count is odd
-                            index === lastIndex
+                            // center last card only when total count is odd
+                            index === lastIndex && certificationsData.length % 2 !== 0
                                 ? "sm:col-span-2 sm:max-w-[20rem] sm:mx-auto sm:w-full"
                                 : ""
                         }`}
