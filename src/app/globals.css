@@ -6,6 +6,10 @@ html {
     --line-color: #e5e7eb;
 }
 
+html.dark {
+    --line-color: rgba(214, 211, 209, 0.15);
+}
+
 .borderBlack {
-    @apply border border-black/10;
+    @apply border border-black/10 dark:border-stone-800;
 }

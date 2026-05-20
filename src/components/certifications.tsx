@@ -16,11 +16,11 @@ export default function Certifications() {
             <SectionHeading title={"My Certifications"} />
             <div className="">
 
-                <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
+                <ul className="flex flex-wrap justify-center gap-2 text-lg text-gray-800 dark:text-stone-200">
                     {
                         certificationsData.map((certification, index) => (
                             <motion.li
-                                className="bg-white border border-black/[0.1] rounded-xl px-5 py-4 w-full max-w-[16rem] sm:max-w-[20rem] min-h-[18rem] sm:min-h-[18rem]"
+                                className="bg-white dark:bg-stone-900 border border-black/[0.1] dark:border-stone-800 rounded-xl px-5 py-4 w-full max-w-[16rem] sm:max-w-[20rem] min-h-[18rem] sm:min-h-[18rem]"
                                 key={index}
                                 initial="initial"
                                 whileInView="animate"

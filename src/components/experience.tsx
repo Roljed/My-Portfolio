@@ -17,10 +17,10 @@ import { LuGraduationCap } from 'react-icons/lu';
 import { CgWorkAlt } from 'react-icons/cg';
 
 const experienceIcons: Record<ExperienceIcon, React.ReactNode> = {
-    intel: <SiIntel className="h-5 w-5 text-gray-700" aria-hidden />,
-    graduation: <LuGraduationCap className="h-5 w-5 text-gray-700" aria-hidden />,
-    intern: <PiStudent className="h-5 w-5 text-gray-700" aria-hidden />,
-    work: <CgWorkAlt className="h-5 w-5 text-gray-700" aria-hidden />,
+    intel: <SiIntel className="h-5 w-5 text-gray-700 dark:text-stone-300" aria-hidden />,
+    graduation: <LuGraduationCap className="h-5 w-5 text-gray-700 dark:text-stone-300" aria-hidden />,
+    intern: <PiStudent className="h-5 w-5 text-gray-700 dark:text-stone-300" aria-hidden />,
+    work: <CgWorkAlt className="h-5 w-5 text-gray-700 dark:text-stone-300" aria-hidden />,
 };
 
 const fadeInAnimationVariants = {
@@ -33,11 +33,11 @@ const fadeInAnimationVariants = {
 };
 
 const cardClassName =
-    'bg-gray-100 border border-black/5 rounded-lg px-6 py-5 text-left';
+    'bg-gray-100 dark:bg-stone-900 border border-black/5 dark:border-stone-800 rounded-lg px-6 py-5 text-left';
 
 function ExperienceIconBadge({ icon }: { icon: ExperienceIcon }) {
     return (
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white border border-black/10">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white dark:bg-stone-800 border border-black/10 dark:border-stone-700">
             {experienceIcons[icon]}
         </span>
     );
@@ -45,7 +45,7 @@ function ExperienceIconBadge({ icon }: { icon: ExperienceIcon }) {
 
 function DatePill({ date }: { date: string }) {
     return (
-        <span className="inline-block rounded-full bg-white border border-black/10 px-3 py-1 text-sm font-semibold text-gray-600">
+        <span className="inline-block rounded-full bg-white dark:bg-stone-800 border border-black/10 dark:border-stone-700 px-3 py-1 text-sm font-semibold text-gray-600 dark:text-stone-300">
             {date}
         </span>
     );
@@ -54,7 +54,7 @@ function DatePill({ date }: { date: string }) {
 function ExperienceDetails({ item }: { item: ExperienceItem }) {
     if ('bullets' in item && item.bullets) {
         return (
-            <ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700 leading-relaxed">
+            <ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700 dark:text-stone-300 leading-relaxed">
                 {item.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                 ))}
@@ -64,7 +64,7 @@ function ExperienceDetails({ item }: { item: ExperienceItem }) {
 
     if ('description' in item && item.description) {
         return (
-            <p className="mt-2 text-gray-700 leading-relaxed">{item.description}</p>
+            <p className="mt-2 text-gray-700 dark:text-stone-300 leading-relaxed">{item.description}</p>
         );
     }
 
@@ -77,8 +77,8 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
             <div className="flex gap-3 items-start">
                 <ExperienceIconBadge icon={item.icon} />
                 <div className="min-w-0 flex-1">
-                    <h3 className="font-semibold text-gray-900">{item.title}</h3>
-                    <p className="text-gray-800">{item.location}</p>
+                    <h3 className="font-semibold text-gray-900 dark:text-stone-100">{item.title}</h3>
+                    <p className="text-gray-800 dark:text-stone-300">{item.location}</p>
                     <ExperienceDetails item={item} />
                 </div>
             </div>
@@ -89,14 +89,14 @@ function ExperienceCard({ item }: { item: ExperienceItem }) {
 function IntelCloudGroupCard() {
     return (
         <article className={cardClassName}>
-            <header className="mb-6 border-b border-black/5 pb-4">
+            <header className="mb-6 border-b border-black/5 dark:border-stone-800 pb-4">
                 <div className="flex gap-3 items-center">
                     <ExperienceIconBadge icon="intel" />
                     <div>
-                        <h3 className="text-lg font-semibold text-gray-900">
+                        <h3 className="text-lg font-semibold text-gray-900 dark:text-stone-100">
                             {intelCloudGroup.employer}
                         </h3>
-                        <p className="text-gray-700 font-medium">{intelCloudGroup.headline}</p>
+                        <p className="text-gray-700 dark:text-stone-300 font-medium">{intelCloudGroup.headline}</p>
                     </div>
                 </div>
             </header>
@@ -104,11 +104,11 @@ function IntelCloudGroupCard() {
                 {intelCloudGroup.roles.map((role) => (
                     <li
                         key={role.title}
-                        className="border-l-4 border-gray-400 pl-4 sm:pl-5"
+                        className="border-l-4 border-gray-400 dark:border-amber-900/50 pl-4 sm:pl-5"
                     >
                         <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
-                            <h4 className="font-semibold text-gray-900">{role.title}</h4>
-                            <span className="text-sm font-semibold text-gray-500 shrink-0">
+                            <h4 className="font-semibold text-gray-900 dark:text-stone-100">{role.title}</h4>
+                            <span className="text-sm font-semibold text-gray-500 dark:text-stone-400 shrink-0">
                                 {role.date}
                             </span>
                         </div>
@@ -127,12 +127,12 @@ function DesktopSingleCard({ item }: { item: ExperienceItem }) {
                 <ExperienceIconBadge icon={item.icon} />
                 <div className="min-w-0 flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
-                        <h3 className="font-semibold text-gray-900">{item.title}</h3>
-                        <span className="text-sm font-semibold text-gray-500 shrink-0">
+                        <h3 className="font-semibold text-gray-900 dark:text-stone-100">{item.title}</h3>
+                        <span className="text-sm font-semibold text-gray-500 dark:text-stone-400 shrink-0">
                             {item.date}
                         </span>
                     </div>
-                    <p className="text-gray-800 mt-1">{item.location}</p>
+                    <p className="text-gray-800 dark:text-stone-300 mt-1">{item.location}</p>
                     <ExperienceDetails item={item} />
                 </div>
             </div>

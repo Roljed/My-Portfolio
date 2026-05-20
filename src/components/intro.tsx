@@ -33,7 +33,7 @@ export default function Intro() {
                                height={192}
                                quality="95"
                                priority={true}
-                               className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white shadow-xl"
+                               className="h-24 w-24 rounded-full object-cover border-[0.35rem] border-white dark:border-stone-700 shadow-xl"
                         ></Image>
                     </motion.div>
                     <motion.span className="absolute bottom-0 right-0 text-4xl"
@@ -92,21 +92,21 @@ export default function Intro() {
                 />
                 </a>
 
-                <a className="group bg-white text-gray-900 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-102 transition cursor-pointer borderBlack"
+                <a className="group bg-white dark:bg-stone-900 text-gray-900 dark:text-stone-100 px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-105 hover:scale-105 active:scale-102 transition cursor-pointer borderBlack"
                    href="/cv_yaad_nahshon.pdf"
                    download="cv_yaad_nahshon.pdf"
                 >
                     Download CV <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />
                 </a>
                 <div className="flex sm:flex-row items-center justify-center gap-2">
-                    <a className="bg-white text-gray-700 p-4 flex items-center rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer borderBlack"
+                    <a className="bg-white dark:bg-stone-900 text-gray-700 dark:text-stone-200 p-4 flex items-center rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 dark:hover:text-stone-50 active:scale-105 transition cursor-pointer borderBlack"
                         href="https://www.linkedin.com/in/yaad-nahshon/"
                        target="_blank"
                     >
                         <BsLinkedin />
                     </a>
 
-                    <a className="bg-white text-gray-700 p-4 flex items-center text-[1.33rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 active:scale-105 transition cursor-pointer border border-black/10"
+                    <a className="bg-white dark:bg-stone-900 text-gray-700 dark:text-stone-200 p-4 flex items-center text-[1.33rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-900 dark:hover:text-stone-50 active:scale-105 transition cursor-pointer border border-black/10 dark:border-stone-800"
                         href="https://github.com/Roljed"
                        target="_blank"
                     >
