@@ -61,7 +61,7 @@ export const experiencesData = [
         bullets: [
             "Appointed to a Tech Lead role to oversee the stability and release practices of our existing internal cloud platform pipelines.",
             "Extended framework capabilities to support new deployment requirements while ensuring zero downtime or disruption for internal users.",
-            "Maintained continuous integration environments, troubleshooted pipeline failures, and optimized execution steps in Jenkins and GitHub Actions.",
+            "Maintained continuous integration environments, troubleshot pipeline failures, and optimized execution steps in Jenkins and GitHub Actions.",
         ],
     },
     {
