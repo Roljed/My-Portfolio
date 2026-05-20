@@ -1,6 +1,6 @@
-import projectRedisImg from "../../public/projects/project-redis-in-python.png"
+import projectJenkinsSandboxImg from "../../public/projects/project-jenkins-sandbox.png"
+import projectTerraformAWSImg from "../../public/projects/project-terraform-aws.png"
 import projectAnalysisImg from "../../public/projects/project-cyclistic-study.png"
-import projectERDiagram from "../../public/projects/project-ER-Diagram.png"
 import projectLittleLemonRestaurantImg from "../../public/projects/project-little-lemon-restaurant.png"
 import certificationAWSCloudPractitioner from "../../public/certs/aws-certified-cloud-practitioner.png"
 import certificationGoogleDataAnalytics from "../../public/certs/google-data-analytics-professional-certificate.png"
@@ -128,29 +128,36 @@ export const desktopExperienceItems = [
 
 export const projectsData = [
     {
-        title: "Redis",
-        tags: ["Python", "Threading", "Network"],
-        description: "My implementation of Redis DB in Python.",
-        imageUrl: projectRedisImg,
+        title: "Jenkins Sandbox",
+        category: "DevOps & CI/CD",
+        tags: ["Jenkins", "Docker", "Kubernetes", "AWS", "Groovy"],
+        description: "A self-contained Jenkins playground for testing CI/CD automation — integrates Docker, Kubernetes, AWS S3, Git webhooks, and IaC patterns. Built to safely experiment with pipeline designs without touching production.",
+        imageUrl: projectJenkinsSandboxImg,
+        url: "https://github.com/Roljed/Jenkins-Sandbox",
     },
     {
-        title: "Little Lemon Database",
-        tags: ["SQL", "MySQL"],
-        description: "Little Lemon Database",
-        imageUrl: projectERDiagram,
-
+        title: "Terraform AWS",
+        category: "Infrastructure as Code",
+        tags: ["Terraform", "AWS", "IaC", "HCL"],
+        description: "Progressive IaC reference project on AWS — covers IAM policies, S3 buckets, DynamoDB tables, and remote state management with Terraform. Each module is a standalone proof-of-concept deployable with a single command.",
+        imageUrl: projectTerraformAWSImg,
+        url: "https://github.com/Roljed/Terraform-AWS",
     },
     {
         title: "Little Lemon Restaurant",
-        tags: ["React", "Python", "Django"],
-        description: "Little Lemon Restaurant",
+        category: "Full-Stack",
+        tags: ["React Native", "Redux", "Node.js", "MongoDB"],
+        description: "Mobile capstone app for a restaurant chain — browse menus, book tables, get chef recommendations, and manage orders. Built with React Native and Redux on the frontend, Node.js & Express API, and MongoDB Atlas.",
         imageUrl: projectLittleLemonRestaurantImg,
+        url: "https://github.com/Roljed/LittleLemonCapstoneApp",
     },
     {
         title: "Cyclist Study",
-        tags: ["Python", "R", "Data analysis"],
-        description: "Google cyclist bike-share analysis case study using R and Python",
+        category: "Data Analysis",
+        tags: ["Python", "R", "Data Analysis", "Visualization"],
+        description: "End-to-end Google data analytics case study: cleaned and analyzed 5M+ ride records to uncover behavioral differences between casual riders and annual members, with visualizations and actionable recommendations.",
         imageUrl: projectAnalysisImg,
+        url: "https://github.com/Roljed/Cyclistic-Case-Study",
     }
 ] as const;
 
