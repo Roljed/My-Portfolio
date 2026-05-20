@@ -4,14 +4,17 @@ import React, { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { HiExternalLink } from "react-icons/hi";
 
 type ProjectProps = (typeof projectsData)[number];
 
 export default function Project({
     title,
+    category,
     description,
     tags,
     imageUrl,
+    url,
 }: ProjectProps) {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -24,57 +27,53 @@ export default function Project({
     return (
         <motion.div
             ref={ref}
-            style={{
-                scale: scaleProgress,
-                opacity: opacityProgress,
-            }}
-            className="group relative mb-8 last:mb-0 sm:mb-8"
+            style={{ scale: scaleProgress, opacity: opacityProgress }}
+            className="group mb-8 last:mb-0"
         >
-            <section
-                className="bg-gray-100 dark:bg-stone-900 relative w-full border border-black/5 dark:border-stone-800 rounded-lg overflow-hidden hover:bg-gray-200 dark:hover:bg-stone-800 transition
+            <a href={url} target="_blank" rel="noopener noreferrer" className="block">
+                <section className="bg-gray-100 dark:bg-stone-900 border border-black/5 dark:border-stone-800 rounded-lg overflow-hidden
                     flex flex-col
-                    sm:block sm:h-[20rem] sm:pr-8
-                    lg:pr-12
-                    group-even:sm:pl-8 group-even:lg:pl-12"
-            >
-                <div className="px-5 pt-5 pb-4 sm:py-4 sm:px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] group-even:sm:ml-[14rem] group-even:lg:ml-[18rem] group-odd:sm:mr-[14rem] group-odd:lg:mr-[18rem]">
-                    <h3 className="text-xl sm:text-2xl font-semibold">{title}</h3>
-                    <p className="mt-2 leading-relaxed text-gray-700 dark:text-stone-300">{description}</p>
-                    <ul className="flex flex-wrap mt-4 gap-2">
-                        {tags.map((tag, index) => (
-                            <li
-                                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full"
-                                key={index}
-                            >
-                                {tag}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                    transition-all duration-300
+                    hover:shadow-lg hover:border-black/10 dark:hover:border-stone-600 hover:bg-gray-200 dark:hover:bg-stone-800">
 
-                <div className="relative w-full px-5 pb-5 sm:hidden">
-                    <Image
-                        src={imageUrl}
-                        alt={title}
-                        quality={95}
-                        className="w-full h-auto rounded-lg shadow-lg"
-                        sizes="(max-width: 640px) 100vw, 0px"
-                    />
-                </div>
+                    <div className="relative w-full aspect-video bg-stone-200 dark:bg-stone-800 overflow-hidden">
+                        <Image
+                            src={imageUrl}
+                            alt={title}
+                            fill
+                            quality={95}
+                            className="object-contain p-2 transition duration-300 group-hover:scale-[1.02]"
+                            sizes="(max-width: 640px) 100vw, 800px"
+                        />
+                    </div>
 
-                <Image
-                    src={imageUrl}
-                    alt={title}
-                    quality={95}
-                    className="hidden sm:block absolute top-8 -right-24 w-[20rem] rounded-t-lg shadow-2xl
-                        lg:-right-32 lg:w-[24rem] xl:-right-40 xl:w-[28.25rem]
-                        group-even:right-[initial] group-even:-left-24 group-even:lg:-left-32 group-even:xl:-left-40
-                        group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2
-                        group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2
-                        group-hover:scale-[1.04] transition"
-                    sizes="(min-width: 640px) 452px, 0px"
-                />
-            </section>
+                    <div className="px-6 py-5 flex flex-col gap-3">
+                        <div>
+                            <span className="text-[0.65rem] font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
+                                {category}
+                            </span>
+                            <h3 className="mt-1 text-xl font-semibold flex items-center gap-2">
+                                {title}
+                                <HiExternalLink className="text-base shrink-0 opacity-0 group-hover:opacity-40 transition text-gray-500 dark:text-stone-400" />
+                            </h3>
+                            <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-stone-300">
+                                {description}
+                            </p>
+                        </div>
+
+                        <ul className="flex flex-wrap gap-2">
+                            {tags.map((tag, index) => (
+                                <li
+                                    key={index}
+                                    className="bg-black/[0.7] dark:bg-stone-700 px-3 py-1 text-[0.65rem] uppercase tracking-wider text-white rounded-full"
+                                >
+                                    {tag}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </section>
+            </a>
         </motion.div>
     );
 }
