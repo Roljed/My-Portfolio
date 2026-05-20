@@ -8,6 +8,17 @@ import certificationGoogleProjectManagement from "../../public/certs/google-proj
 import certificationMetaFullStackEngineer from "../../public/certs/meta-full-stack-engineer-certificate.png"
 import certificationMetaDatabaseEngineer from "../../public/certs/meta-database-engineer-certificate.png"
 
+export const personalData = {
+    name: "Yaad Nahshon",
+    headline: "Senior Cloud Software Engineer & Tech Lead",
+    email: "ydnahshon@gmail.com",
+    linkedinUrl: "https://www.linkedin.com/in/yaad-nahshon/",
+    linkedinHandle: "linkedin.com/in/yaad-nahshon",
+    githubUrl: "https://github.com/Roljed",
+    githubHandle: "github.com/Roljed",
+    summary: "Senior Cloud Software Engineer and Tech Lead at Intel Corporation with 6+ years of experience. Expert in platform engineering, high-scale DevOps orchestration, and reliable software delivery — transforming complex CI/CD bottlenecks into automated, repeatable systems. Proven technical leader: guiding squads, setting engineering standards, and mentoring engineers.",
+} as const;
+
 export const links = [
     {
         name: "Home",

@@ -8,12 +8,16 @@ import { CvDocument } from "@/lib/cv-document";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-    const buffer = await renderToBuffer(React.createElement(CvDocument));
-
-    return new NextResponse(buffer, {
-        headers: {
-            "Content-Type": "application/pdf",
-            "Content-Disposition": 'attachment; filename="cv_yaad_nahshon.pdf"',
-        },
-    });
+    try {
+        const buffer = await renderToBuffer(React.createElement(CvDocument));
+        return new NextResponse(buffer, {
+            headers: {
+                "Content-Type": "application/pdf",
+                "Content-Disposition": 'attachment; filename="cv_yaad_nahshon.pdf"',
+            },
+        });
+    } catch (err) {
+        console.error("CV generation failed:", err);
+        return NextResponse.json({ error: "Failed to generate CV" }, { status: 500 });
+    }
 }

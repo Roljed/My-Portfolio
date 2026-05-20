@@ -9,7 +9,7 @@ import {
     Link,
     StyleSheet,
 } from "@react-pdf/renderer";
-import { experiencesData, skillsData, certificationsData, projectsData } from "@/lib/data";
+import { personalData, experiencesData, skillsData, certificationsData, projectsData } from "@/lib/data";
 
 const fontsDir = path.join(process.cwd(), "public", "fonts");
 
@@ -155,13 +155,9 @@ const styles = StyleSheet.create({
 
 const RECENT_EXPERIENCE = experiencesData.slice(0, 3);
 
-const summaryParagraphs = [
-    "Senior Cloud Software Engineer and Tech Lead at Intel Corporation with 6+ years of experience. Expert in platform engineering, high-scale DevOps orchestration, and reliable software delivery — transforming complex CI/CD bottlenecks into automated, repeatable systems. Proven technical leader: guiding squads, setting engineering standards, and mentoring engineers.",
-];
-
 export function CvDocument() {
     return (
-        <Document title="Yaad Nahshon — CV" author="Yaad Nahshon">
+        <Document title={`${personalData.name} — CV`} author={personalData.name}>
             <Page size="A4" style={styles.page}>
 
                 <View style={styles.accentBar} />
@@ -169,26 +165,24 @@ export function CvDocument() {
                 <View style={styles.content}>
 
                     {/* ── Header ── */}
-                    <Text style={styles.name}>Yaad Nahshon</Text>
-                    <Text style={styles.headline}>Senior Cloud Software Engineer & Tech Lead</Text>
+                    <Text style={styles.name}>{personalData.name}</Text>
+                    <Text style={styles.headline}>{personalData.headline}</Text>
                     <View style={styles.contactRow}>
-                        <Link src="mailto:ydnahshon@gmail.com" style={styles.contactLink}>
-                            <Text>ydnahshon@gmail.com</Text>
+                        <Link src={`mailto:${personalData.email}`} style={styles.contactLink}>
+                            <Text>{personalData.email}</Text>
                         </Link>
-                        <Link src="https://www.linkedin.com/in/yaad-nahshon/" style={styles.contactLink}>
-                            <Text>linkedin.com/in/yaad-nahshon</Text>
+                        <Link src={personalData.linkedinUrl} style={styles.contactLink}>
+                            <Text>{personalData.linkedinHandle}</Text>
                         </Link>
-                        <Link src="https://github.com/Roljed" style={styles.contactLink}>
-                            <Text>github.com/Roljed</Text>
+                        <Link src={personalData.githubUrl} style={styles.contactLink}>
+                            <Text>{personalData.githubHandle}</Text>
                         </Link>
                     </View>
                     <View style={styles.divider} />
 
                     {/* ── Summary ── */}
                     <Text style={styles.sectionTitle}>SUMMARY</Text>
-                    {summaryParagraphs.map((p, i) => (
-                        <Text key={i} style={styles.summaryPara}>{p}</Text>
-                    ))}
+                    <Text style={styles.summaryPara}>{personalData.summary}</Text>
 
                     {/* ── Experience ── */}
                     <Text style={styles.sectionTitle}>EXPERIENCE</Text>

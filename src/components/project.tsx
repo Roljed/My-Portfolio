@@ -31,7 +31,7 @@ export default function Project({
             hover:shadow-lg hover:border-black/10 dark:hover:border-stone-600 hover:bg-gray-200 dark:hover:bg-stone-800">
 
             {/* Banner image — full width, fully visible */}
-            <div className="relative w-full bg-stone-200 dark:bg-stone-800 overflow-hidden" style={{ aspectRatio: "16/9" }}>
+            <div className="relative w-full aspect-video bg-stone-200 dark:bg-stone-800 overflow-hidden">
                 <Image
                     src={imageUrl}
                     alt={title}
