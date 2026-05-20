@@ -1,8 +1,3 @@
-import  React from "react"
-import { CgWorkAlt } from "react-icons/cg";
-import { SiIntel } from "react-icons/si";
-import { PiStudent } from "react-icons/pi";
-import {LuGraduationCap} from "react-icons/lu";
 import projectRedisImg from "../../public/projects/project-redis-in-python.png"
 import projectAnalysisImg from "../../public/projects/project-cyclistic-study.png"
 import projectERDiagram from "../../public/projects/project-ER-Diagram.png"
@@ -46,48 +41,90 @@ export const links = [
 
 export const experiencesData = [
     {
+        title: "Senior Cloud Software Engineer / Tech Lead",
+        location: "Intel Corporation",
+        date: "Feb 2026 – Present",
+        icon: "intel",
+        bullets: [
+            "Serve as Tech Lead for a platform/DevOps squad, balancing day-to-day framework maintenance with technical guidance for the team.",
+            "Maintain, test, and extend features within our core internal infrastructure and CI/CD frameworks built on Jenkins and GitHub Actions.",
+            "Write and review Python automation scripts to streamline internal operations and support concurrent engineering workflows.",
+            "Build custom, internal AI tools using LangChain to help colleagues parse documentation, automate runbooks, and reduce repetitive daily tasks.",
+            "Guide team workflows, coordinate task allocation, and mentor peers on code reviews and testing standards.",
+        ],
+    },
+    {
+        title: "Cloud Software Engineer / Tech Lead",
+        location: "Intel Corporation",
+        date: "Jan 2025 – Feb 2026",
+        icon: "intel",
+        bullets: [
+            "Appointed to a Tech Lead role to oversee the stability and release practices of our existing internal cloud platform pipelines.",
+            "Extended framework capabilities to support new deployment requirements while ensuring zero downtime or disruption for internal users.",
+            "Maintained continuous integration environments, troubleshot pipeline failures, and optimized execution steps in Jenkins and GitHub Actions.",
+        ],
+    },
+    {
         title: "Cloud Software Engineer",
-        location: "Intel",
-        date: "Sep 2024",
-        icon: React.createElement(SiIntel),
-        description: "DevOps, CI/CD pipeline integration, pull requests, code reviews, load/stress testing, unit/integration/e2e testing.",
+        location: "Intel Corporation",
+        date: "Sep 2024 – Jan 2025",
+        icon: "intel",
+        bullets: [
+            "Assisted in the day-to-day integration and maintenance of CI/CD artifact promotion pipelines.",
+            "Wrote and updated automated tests (such as unit and integration tests) to ensure framework stability before updates are rolled out.",
+            "Worked with on-premises cloud infrastructure components, focusing on script reliability, environment consistency, and pipeline observability.",
+        ],
     },
     {
         title: "Software Simulation Engineer",
-        location: "Intel",
+        location: "Intel Corporation",
         date: "Jan 2022",
-        icon: React.createElement(SiIntel),
-        description: "Developed simulation infrastructure, simulators, and models to optimize performance, power, quality, and reliability of future Intel chips."
+        icon: "intel",
+        description: "Built and scaled simulation infrastructure and tooling in Python—automation, batch orchestration, and internal platforms that improved performance/power modeling workflows for next-gen Intel silicon.",
     },
     {
         title: "Software Engineer",
-        location: "Intel",
+        location: "Intel Corporation",
         date: "July 2020",
-        icon: React.createElement(SiIntel),
-        description: "Developed internal tools for analysis of power and thermal simulations and studies."
+        icon: "intel",
+        description: "Developed Python-based internal platforms for power and thermal simulation analysis—data pipelines, reproducible studies, and tooling used by cross-functional hardware teams.",
     },
     {
         title: "Graduated B.Sc. in Computer Science",
         location: "Haifa University",
         date: "Sep 2020",
-        icon: React.createElement(LuGraduationCap),
+        icon: "graduation",
         description: "Graduated BS in Computer Science",
     },
     {
         title: "Software Engineer Intern",
-        location: "Intel",
+        location: "Intel Corporation",
         date: "Oct 2018",
-        icon: React.createElement(PiStudent),
+        icon: "intern",
         description: "Developed internal tools for analysis of power and thermal simulations."
     },
     {
         title: "Lab Operator",
-        location: "Intel",
+        location: "Intel Corporation",
         date: "Sep 2016",
-        icon: React.createElement(CgWorkAlt),
+        icon: "work",
         description: "Operation of mechanized microprocessor- chip test, requiring assessment and troubleshooting."
     },
 ] as const;
+
+export type ExperienceItem = (typeof experiencesData)[number];
+export type ExperienceIcon = ExperienceItem["icon"];
+
+export const intelCloudGroup = {
+    employer: "Intel Corporation",
+    headline: "Senior Cloud Software Engineer / Tech Lead",
+    roles: experiencesData.slice(0, 3),
+} as const;
+
+export const desktopExperienceItems = [
+    { type: "group" as const, ...intelCloudGroup },
+    ...experiencesData.slice(3).map((item) => ({ type: "single" as const, ...item })),
+];
 
 export const projectsData = [
     {
@@ -128,12 +165,6 @@ export const skillsData = [
     "Next.js",
     "Tailwind",
     "Framer Motion",
-    "Django",
-    "NumPy",
-    "Pandas",
-    "Matplotlib",
-    "Dashlane",
-    "Bokeh",
     "MySQL",
     "MongoDB",
     "R",
@@ -145,6 +176,10 @@ export const skillsData = [
     "Terraform",
     "Ansible",
     "AWS",
+    "GCP",
+    "LangChain",
+    "Platform Engineering",
+    "IaC",
 ] as const;
 
 export const certificationsData = [

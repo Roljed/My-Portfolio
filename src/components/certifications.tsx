@@ -12,7 +12,7 @@ export default function Certifications() {
     const {ref} = useSectionInView("Certifications");
 
     return (
-        <section id="certifications" className="scroll-mt-28 mb-28 max-w-[50rem]" ref={ref}>
+        <section id="certifications" className="scroll-mt-28 mb-28 max-w-[50rem] w-full px-4" ref={ref}>
             <SectionHeading title={"My Certifications"} />
             <div className="">
 
@@ -20,7 +20,7 @@ export default function Certifications() {
                     {
                         certificationsData.map((certification, index) => (
                             <motion.li
-                                className="bg-white border border-black/[0.1] rounded-xl px-5 py-4 max-w-[20rem] w-64 h-72"
+                                className="bg-white border border-black/[0.1] rounded-xl px-5 py-4 w-full max-w-[16rem] sm:max-w-[20rem] min-h-[18rem] sm:min-h-[18rem]"
                                 key={index}
                                 initial="initial"
                                 whileInView="animate"

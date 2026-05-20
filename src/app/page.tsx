@@ -8,7 +8,7 @@ import Experience from "@/components/experience";
 import Certifications from "@/components/certifications";
 
 export default function Home() {
-  return <main className="flex flex-col items-center px-4">
+  return <main className="flex flex-col items-center w-full overflow-x-hidden">
     <Intro />
     <SectionDivider />
     <About />

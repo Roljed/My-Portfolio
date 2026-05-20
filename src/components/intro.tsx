@@ -16,7 +16,7 @@ export default function Intro() {
         <section
             id="home"
             ref={ref}
-            className="mb-28 max-w-[50rem] text-center sm:mb-0 z-10 scroll-mt-[100rem]">
+            className="mb-28 max-w-[50rem] w-full px-4 text-center sm:mb-0 z-10 scroll-mt-[100rem]">
             <div className="flex items-center justify-center">
                 <div className="relative">
                     <motion.div
@@ -59,19 +59,19 @@ export default function Intro() {
                 </span>
                 I`m a{" "}
                 <span className="font-bold">
-                    cloud software engineer{" "}
+                    senior cloud software engineer & tech lead{" "}
                 </span>
                 with{" "}
                 <span className="font-semibold">
-                    6 years of experience.{" "}
+                    6+ years of experience.{" "}
                 </span>
-                I enjoy building{" "}
+                I design{" "}
                 <span className="italic">
-                    sites & apps.{" "}
+                    CI/CD platforms, cloud infrastructure, and AI agents.{" "}
                 </span>
                 My focus is{" "}
                 <span className="font-semibold">
-                    Python and cloud technologies
+                    DevOps, IaC (Terraform), and AWS/GCP
                 </span>
                 .
             </motion.h1>
