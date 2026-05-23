@@ -174,7 +174,7 @@ export const projectsData = [
         imageUrl: projectAnalysisImg,
         url: "https://github.com/Roljed/Cyclistic-Case-Study",
     }
-] as const;
+] as const satisfies readonly { cvDescription: string; [key: string]: unknown }[];
 
 export const skillsData = [
     "Python",
