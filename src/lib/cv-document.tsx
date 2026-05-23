@@ -234,7 +234,7 @@ export function CvDocument() {
                         <Text key={i} style={styles.projectLine}>
                             <Link src={proj.url} style={styles.projectTitleLink}>{proj.title}</Link>
                             <Text style={styles.projectSep}>{"  "}{proj.tags.join(" · ")}{"  —  "}</Text>
-                            <Text style={styles.projectDesc}>{proj.description}</Text>
+                            <Text style={styles.projectDesc}>{proj.cvDescription}</Text>
                         </Text>
                     ))}
 
